@@ -97,6 +97,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/hello-world",
+            "netlifyToken": "zxf6VSNkkeKXYrkdlYtLdIW5a6HIVeAJtMRGI47A9pw",
+            "siteId": "de27e118-c0cf-45b0-a4e0-d7127e023349"
+          }
         }
       }
     }
