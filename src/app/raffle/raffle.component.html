@@ -1,0 +1,74 @@
+<div class="rafflePage">
+  <p class="title">Cadastrar ticket</p>
+
+  <div class="raffleContainer">
+    <div class="formBox">
+      <form #loginForm="ngForm" (ngSubmit)="addPerson()" class="formRaffle">
+        <label>
+          Nome:
+          <input
+            class="inputName"
+            type="text"
+            [(ngModel)]="name"
+            name="name"
+            required
+          />
+        </label>
+
+        <label>
+          Ticket:
+          <input
+            minlength="6"
+            maxlength="7"
+            type="text"
+            [(ngModel)]="ticket"
+            name="ticket"
+            required
+            mask="#000000"
+            class="inputTickets"
+            value="#"
+          />
+        </label>
+
+        <button
+          class="addButton"
+          type="submit"
+          [disabled]="loginForm.form.invalid"
+        >
+          Registrar
+        </button>
+      </form>
+    </div>
+
+    <div class="boxPeople">
+      <p class="peopleTitle">Há {{ people.length }} registrados!</p>
+      <tr *ngFor="let person of people">
+        {{
+          person.name
+        }}
+        -
+        {{
+          person.ticket
+        }}
+      </tr>
+    </div>
+  </div>
+  <div *ngIf="chosenOne" class="pessoa-sorteada">
+    Parabéns,
+    <span class="chosenName"
+      ><b>{{ chosenOne.name }}</b></span
+    >
+    com o ticket
+    <span class="chosenTicket"
+      ><b>{{ chosenOne.ticket }}</b></span
+    >! Você tem até o dia 20/12/2023 para retirar o prêmio do sorteio, a viagem
+    acontecerá dia 10/01/2024.
+  </div>
+  <div *ngIf="chosenOne" class="confete">🎉</div>
+
+  <div class="admArea">
+    <h1>Escolher pessoa aleatória (só adm consegue visualizar isto)</h1>
+
+    <button (click)="pickOne()" class="addButton">Escolher</button>
+  </div>
+</div>

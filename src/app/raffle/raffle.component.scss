@@ -1,0 +1,190 @@
+$fontF: "Nunito", sans-serif;
+$blueF: rgb(39, 60, 88);
+.confete {
+  font-size: 100px;
+  animation-duration: 15s;
+  animation-name: confete;
+  opacity: 0;
+}
+
+@keyframes confete {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animacao {
+  animation-name: confete;
+  animation-duration: 15s;
+}
+
+.raffleContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.rafflePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: $fontF;
+}
+.formRaffle {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 5rem;
+  color: $blueF;
+}
+
+label {
+  font-weight: 500;
+}
+
+.formBox {
+  background-color: rgba(136, 136, 136, 0.096);
+  margin: 20px;
+  padding: 80px;
+  border-radius: 15px;
+}
+
+.boxPeople {
+  background-color: rgba(136, 136, 136, 0.096);
+  margin: 20px;
+  padding: 80px;
+  border-radius: 15px;
+  height: 225px;
+  width: 277px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-x: auto;
+}
+
+$char-w: 1ch;
+$char-w-name: 4ch;
+$gap: 0.5 * $char-w;
+$n-char: 7;
+$in-w: $n-char * ($char-w + $gap);
+
+.inputTickets {
+  display: block;
+  border: none;
+  padding: 0;
+  width: $in-w;
+  background: repeating-linear-gradient(
+      90deg,
+      dimgrey 0,
+      dimgrey $char-w,
+      transparent 0,
+      transparent $char-w + $gap
+    )
+    0 100% / #{$in-w - $gap} 2px no-repeat;
+  font: 5ch droid sans mono, consolas, monospace;
+  letter-spacing: $gap;
+
+  &:focus {
+    outline: none;
+    color: $blueF;
+  }
+}
+
+.inputName {
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid $blueF;
+  padding: 0;
+  width: 95%;
+  background: none;
+  font: 2ch droid sans mono, consolas, monospace;
+  letter-spacing: $gap;
+
+  &:focus {
+    outline: none;
+    color: $blueF;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .raffleContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+/* CSS */
+.addButton {
+  appearance: button;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.addButton:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.addButton:main,
+.addButton:focus {
+  user-select: auto;
+}
+
+.addButton:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.addButton:disabled {
+  cursor: not-allowed;
+}
+
+.peopleTitle {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}

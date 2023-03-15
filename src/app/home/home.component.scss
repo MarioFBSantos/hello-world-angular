@@ -1,0 +1,49 @@
+$marginSize: 20px;
+$fontF: "Nunito", sans-serif;
+$blueF: rgb(39, 60, 88);
+
+.homePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: $marginSize;
+}
+.title {
+  font-size: 5rem;
+  font-family: $fontF;
+  color: $blueF;
+}
+.text {
+  font-family: $fontF;
+  font-weight: bold;
+}
+.raffleImage {
+  width: 40%;
+}
+.raffleInfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: 1px solid black;
+  padding: 10px 30px 10px 30px;
+  border-radius: 6px;
+}
+.subText {
+  color: gray;
+  font-family: $fontF;
+  font-weight: lighter;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  font-family: $fontF;
+  background-color: $blueF;
+  color: white;
+}
